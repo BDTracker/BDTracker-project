@@ -6,7 +6,7 @@ var loginApi = "https://upzone.search.windows.net/indexes/trails/docs?api-versio
 
 var loginController = angular.module("loginController",["httpService"]);
 
-loginController.controller("loginformController",["$scope","doGetRequest",function($scope,doGetRequest){
+loginController.controller("loginformController",["$scope","doGetRequest","$rootScope",function($scope,doGetRequest,$rootScope){
 									 $scope.user={
 										 username:"",
 										 password:""
@@ -18,22 +18,23 @@ loginController.controller("loginformController",["$scope","doGetRequest",functi
 											window.document.title="";
 											window.close();
 										 };
-									 $scope.login=function(){
+									 $scope.login=function(path,animation){
 										var header = {
 								'api-key':"652EBB3FE7A41C865BEF0654E4BECE13",
 								'Content-Type':"application/json"
 								};
 										 console.log( $scope.user);
-
-										doGetRequest.doGetRequest(loginApi,null,header)
-										.success(function(data, status, headers, config){
-											console.log(data);
-										})
-										.error(function(data, status, headers, config){
-											console.log("request failed");
-											});
+										 $rootScope.go(path,animation);
+										//doGetRequest.doGetRequest(loginApi,null,header)
+										//.success(function(data, status, headers, config){
+										//	console.log(data);
+										//})
+										//.error(function(data, status, headers, config){
+										//	console.log("request failed");
+										//	});
 									 };
 									 }]);
+
 /*var phonecatControllers = angular.module('phonecatControllers', ['phonecatservices']);
   phonecatControllers.value("cid","11111113242342342");
 phonecatControllers.controller('PhoneListCtrl', ['$scope',"cid","$location", 
