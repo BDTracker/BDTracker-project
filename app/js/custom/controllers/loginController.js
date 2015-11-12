@@ -2,7 +2,7 @@
 
 /* loginController */
 
-var loginApi = "http://localhost:8080/BDTracker/test/data.json";
+var loginApi = "https://upzone.search.windows.net/indexes/trails/docs?api-version=2015-02-28&search=San&$orderby=name desc";
 
 var loginController = angular.module("loginController",["httpService"]);
 
@@ -19,11 +19,15 @@ loginController.controller("loginformController",["$scope","doGetRequest",functi
 											window.close();
 										 };
 									 $scope.login=function(){
-										 alert("PK");
+										var header = {
+								'api-key':"652EBB3FE7A41C865BEF0654E4BECE13",
+								'Content-Type':"application/json"
+								};
 										 console.log( $scope.user);
-										doGetRequest.doGetRequest(loginApi)
+
+										doGetRequest.doGetRequest(loginApi,null,header)
 										.success(function(data, status, headers, config){
-											console.log("success");
+											console.log(data);
 										})
 										.error(function(data, status, headers, config){
 											console.log("request failed");

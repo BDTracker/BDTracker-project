@@ -12,3 +12,23 @@
 	color:#FFFFFF;
 	float:left;
 }
+.login-body .input-group-addon{
+border:1px solid #333333;
+background:#FFFFFF;
+border-right-style:none;
+}
+.login-body .form-control{
+border:1px solid #333333;
+border-left-style:none;
+
+
+}
+
+.login-body input {  
+    outline: none;   
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);  
+}  
+.login-body input:focus {
+outline: none;   
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);  
+}

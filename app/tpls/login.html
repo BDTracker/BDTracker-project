@@ -1,12 +1,31 @@
 <div class="login-body green12" ng-controller="loginformController">
-	<form>
-        <input type="text" ng-model= "user.username" />
-        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>  <br/> <br/> <br/>
-        <input type="password" ng-model= "user.password" />
+<div style="height:20rem">
+sss
+</div>
+	<form class="form-horizontal col-xs-10 col-xs-offset-1">
+        <div class="form-group">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon"> 
+                
+                </span>
+                <input type="text" ng-model= "user.username" class="form-control " placeholder="Username" />
+            </div>
+        </div>
+        <br/>
+        <div class="form-group">
+        	<div class="input-group input-group-lg">
+                <span class="input-group-addon"> 
+              
+                </span>
+                <input type="password" ng-model= "user.password" class="form-control" placeholder="Password"/>
+            </div>
+        </div>
+        
+       
+        
         <div class="navbar-fixed-bottom login-buttongroup">
         <button class="black02 f20" ng-click="exit()">Exit</button>
-        <button class="red02 f20" data-toggle="modal" 
-   data-target="#modal" ng-click="login()">Log In</button>
+        <button class="red02 f20" ng-click="login()">Log In</button>
         </div>
     </form>
 <alert-directive></alert-directive>

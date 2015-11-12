@@ -10,7 +10,8 @@ httpService.run(function($http) {
 
 //do get 
 httpService.factory("doGetRequest",["$http",function($http){
-					var doGetRequest = function(url,data){
+					 $http.defaults.withCredentials = true;								 
+					var doGetRequest = function(url,data,header){
 						if(url == null||url == "undefined"){
 							console.log("url can't be null ");
 							return;
@@ -19,24 +20,29 @@ httpService.factory("doGetRequest",["$http",function($http){
 							data = {};
 							console.log("you request is no params");
 							}
+						if(header == null || header==="undefined"){
+							header = {};
+							console.log("you header is no params");
+							}
 						var req = {
 							method:"GET",
 							url:url,
-							data:data
-							
+							data:data,
+							headers:header
 							};
 							return $http(req);
 						};
 						return {
-							doGetRequest:function(url,data){
-								return doGetRequest(url,data);
+							doGetRequest:function(url,data,header){
+								return doGetRequest(url,data,header);
 								}
 							};	
 									}]);
 
 //do post
 httpService.factory("doPostRequest",["$http",function($http){
-					var doPostRequest = function(url,data){
+													  
+					var doPostRequest = function(url,data,header){
 						if(url == null||url == "undefined"){
 							console.log("url can't be null ");
 							return;
@@ -45,16 +51,21 @@ httpService.factory("doPostRequest",["$http",function($http){
 							data = {};
 							console.log("you request is no params");
 							}
+						if(header == null || header==="undefined"){
+							header = {};
+							console.log("you header is no params");
+							}
 						var req = {
 							method:"POST",
 							url:url,
-							data:data
+							data:data,
+							headers:header
 							};
 							return $http(req);
 						};
 						return {
-							doPostRequest:function(url,data){
-								return doPostRequest(url,data);
+							doPostRequest:function(url,data,header){
+								return doPostRequest(url,data,header);
 								}
 							};	
 									}]);
