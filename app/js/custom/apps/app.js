@@ -15,9 +15,8 @@ app.config(['$routeProvider',
       when('/login', {
         templateUrl: 'tpls/login.html'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/search', {
+        templateUrl: 'tpls/search.html'
       }).
       otherwise({
         redirectTo: '/login'
