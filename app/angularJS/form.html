@@ -1,0 +1,5 @@
+<form name="form1" ng-submit="save()" ng-controller="formCtl" >
+<input name="username" type="text" ng-model="user.username" required />
+<input name="password" type="password" ng-model="user.password" required />
+<input type="submit" ng-disabled="form1.$invalid" />
+</form>

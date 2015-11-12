@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="controllers">
+<!-- 直接绑定controllers -->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable = no" >
+<link rel="stylesheet" href="bootstrap.min.css">  
+<script src="angular.min.js"></script>
+<script src="controller1.js"></script>
+
+<style>
+body{ font-size:2rem;}
+.new-class{
+	border:#00C solid 2px;
+	
+	}
+.old-class{
+	border:#0f0 solid 2px;
+	}
+</style>
+</head>
+<body  >
+<hr/>
+<div>
+<p>在输入框中尝试输入：</p>
+  <p>姓名：<input type="text" ng-model="name"></p><!--把name属性绑定到input里面-->
+  <p ng-bind="name"></p>
+</div>
+<hr/>
+<div ng-init="firstName='jhon'">
+<!--初始化一个变量-->
+<span ng-bind="firstName"></span>
+</div>
+<hr/>
+<div data-ng-init="secondName='andy'" id="secondName">
+<!--使用html5获取-->
+<script>
+console.log(document.getElementById("secondName").dataset.ngInit);//dataset获取要驼峰标识
+</script>
+<!--使用angularJS获取-->
+<span ng-bind="secondName"></span>
+</div>
+<hr/>
+<div ng-controller="controller1">
+变量showText：{{showText}}<br/><!--使用controller定义变量-->
+5+5={{5+5}}
+</div>
+
+<hr/>
+<div data-ng-init="count=3;number=8">
+<span ng-bind="count*number"></span><!--使用ng-bind和表达式,字符串是一样的效果-->
+{{count*number}}
+</div>
+
+<hr/>
+<div data-ng-init="person={name:'lily',age:20,male:'female',point1:[1,2,3,5,3]};point2=[1,4,32,2]"><!--init可以定义json数据和数组-->
+<span ng-bind="person.name+person.age"></span><br/>
+{{person.male}}
+<br/>
+point1:{{person.point1[2]}}
+<br/>
+point2:{{point2[2]}}
+</div>
+
+<hr/>
+<div data-ng-init="nameArray=['jack','maven','java','kolo']"><!--ng-reapet遍历数组-->
+<ul>
+<li  ng-repeat="x in nameArray">{{x}}</li>
+</ul>
+</div>
+
+<hr/>
+<div ng-controller="controller2"><!--调用controller中的函数并传参-->
+{{fullName1()}}
+<span ng-bind="fullName1()"></span>
+<br/>
+{{fullName2("Cheng","jack")}}
+<span ng-bind="fullName2('Cheng','jack')"></span>
+</div>
+
+<hr/>
+angular中默认的过滤器有currency（格式化数字为货币），filter（从数组中选择一个子集），lowercase,uppercase（转换成大小写），orderBy（根据某个表达式排列数组。）
+<div ng-init="LanguageName=['java','LUA','C#','php'];cityName=[{name:'chongqing',age:10},{name:'beijing',age:12},{name:'tianjing',age:5}];">
+{{LanguageName[0]|uppercase}}<!--使用竖线过滤--><br>
+{{LanguageName[1]}}<br>
+{{LanguageName[1]|lowercase}}<br>
+总价：{{3*5|currency}}<br>
+排序：
+<ul>
+<li ng-repeat="city in cityName|orderBy:'name'">{{city.name+" "+city.age}}</li>
+</ul>
+<ul>
+<li ng-repeat="city in cityName|orderBy:'age'">{{city.name+" "+city.age}}</li>
+</ul>
+</div>
+
+<hr>
+输入过滤功能
+<div ng-init="cityName=[{name:'chongqing',age:10},{name:'beijing',age:12},{name:'tianjing',age:5}];">
+<input type="text" ng-model="city">
+<ul>
+<li ng-repeat="x in cityName |filter:city|orderBy:'name'">{{x.name+" "+ x.age}}</li><!--过滤ng-nodel里面的输入数据显示cityName-->
+</ul>
+</div>
+
+<hr>
+获取远程json数据
+<div ng-controller="controller3">
+<ul ng-repeat="x in names"><!--$index显示序号-->
+<li ng-if="$odd" style="background-color:#CCC">第{{$index+1}}个：{{x.Name+ " " + x.City + " " + x.Country}}</li>
+<li ng-if="$even">第{{$index+1}}个：{{x.Name+ " " + x.City + " " + x.Country}}</li>
+</ul>
+</div>
+
+<hr>
+<div>
+<button ng-disabled="mySwitch">按钮</button>
+<input type="checkbox" ng-model="mySwitch">点我</div>
+</div>
+
+<hr>
+<div ng-init="n1=2;n2=3;r=true">
+<button ng-show="true">显示</button>
+<button ng-hide="true">隐藏</button>
+</div>
+
+<hr>
+<div ng-controller="controller4">
+<button ng-click="toggle()">{{btt1}}</button>
+<button ng-show="myVar">{{btt2}}</button>
+</div>
+
+<hr>
+<div ng-controller="controller5">
+<button ng-click="toggle()">{{btt1}}</button>
+<button ng-show="myVar">{{btt2}}</button>
+</div>
+
+<hr>
+<div ng-controller="controller6">
+<!-- 在一个地方初始化rootScope变量，在其他任何地方都可以使用,var1只作用于当前的scope -->
+<input ng-model="var1"></input>
+{{var1}}
+</div>
+{{var2}}
+
+<hr>
+<div ng-controller="controller7">
+rootScope:{{count}}
+<div ng-controller="controller7">
+<button ng-click="$emit('myEvent')">$emit</button>
+<!-- $emit在当前层级和向上层级变化，$broadcast在当前层级和下层级变化 -->
+<button ng-click="$broadcast('myEvent')">$broadcast</button>
+{{var1}}
+middle:{{count}}
+<div ng-controller="controller7" ng-view>
+
+leaf:{{count}}
+</div>
+</div>
+</div>
+
+<div class="panel panel-primary ">
+	<div class="panel-title col-md-12">双向数据绑定</div>
+	<div class="panel-body">双向数据内容</div>
+</div>
+
+<div ng-controller="controller8"></div>
+<hr/>
+<div ng-controller="controller9 as c9">{{name}}</div>
+</body>
+</html>

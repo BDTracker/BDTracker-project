@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="app1">
+<!-- 直接绑定app1，app1通过配置找到controllers -->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable = no" >
+
+<script src="angular.min.js"></script>
+<script src="angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="controller1.js"></script>
+
+<script src="directive.js"></script>
+
+
+</head>
+<body>
+<hello1></hello1>
+<div hello1></div>
+<hello2></hello2>
+<hello3>
+<div>里面的内容</div><!--replace=true,会将里面的内容替换掉-->
+</hello3>
+
+<hello4>
+<span>新的内容</span>
+</hello4>
+<div ng-controller="ctl1">
+<hello5 howToLoad="loadData()"></hello5>
+</div>
+
+<div ng-controller="ctl2">
+<hello5 howToLoad="loadData2()"></hello5>
+</div>
+<hr/>
+<superman speed>11</superman>
+<superman speed strength>22</superman>
+<superman speed strength light>33</superman>
+
+<hello6 ></hello6>
+<hello6 ></hello6>
+<hello6 ></hello6>
+<hello7 ></hello7>
+<hello7 ></hello7>
+<hello7 ></hello7>
+<div ng-controller="helloCtl8">
+<hello8 flaver="{{flaverCtl}}"><!--flaver="{{}}",可以取其他scope里面的值--></hello8>
+</div>
+
+<div ng-controller="helloCtl9">
+<input ng-model="flaverCtl"/>{{flaverCtl}}
+<hello9 flaver="flaverCtl"></hello9>
+<br/>
+<div ng-controller="helloCtl10">
+<hello10 greet="sayHello(name)"></hello10>
+</div>
+</div>
+<hr/>
+<form-dr></form-dr>
+</body>
+</html>

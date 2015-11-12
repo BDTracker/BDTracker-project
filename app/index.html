@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable = no" >
+  <!--lib css-->	
+<link rel="stylesheet" href="css/lib/bootstrap.min.css"> 
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+		rel="stylesheet">
+<link rel="stylesheet" href="css/lib/daterangepicker.css"  media="all">  
+ 
+<link rel="stylesheet" href="css/custom/global.css">  
+
+<link rel="stylesheet" href="css/custom/login.css">
+
+  <!--lib js-->	
+<script src="js/lib/jquery.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/lib/angular-route.min.js"></script>
+<script src="js/lib/moment.min.js"></script>
+<script src="js/lib/daterangepicker.js"></script>
+
+
+ <!--custom js-->
+<script src="js/custom/animations.js"></script>
+
+
+<!--logic js-->
+<script src="js/custom/directives/directives.js"></script>
+<script src="js/custom/services/httpService.js"></script>
+<script src="js/custom/controllers/loginController.js"></script>
+<script src="js/custom/apps/app.js"></script>
+
+</head>
+<body>
+<div ng-view>
+
+</div>
+
+
+<!--<a href="mailto:test1@163.com?subject=Testing mailto&cc=test3@126.com">mail</a>
+
+<a href="index1.html" data-transition="slide">I'll pop</a>
+
+<div ng-controller="controller1">
+<ul>
+<li ng-repeat="x in infoList" ng-bind="x.City + x.Name">
+
+</li>
+</ul>
+
+</div>
+<div class="h1">标题1<small>小标题</small></div>
+<div class=" col-lg-5 col-md-11 col-sm-2 col-xs-7" style="background-color:red">ss</div>
+
+<div class="well">
+					<form class="form-horizontal">
+						<fieldset>
+							<div class="control-group">
+								<div class="controls">
+									<div class="input-prepend input-group">
+										<span class="add-on input-group-addon">
+											<i class="glyphicon glyphicon-calendar fa fa-calendar">
+											</i>
+										</span>
+										<input type="text" style="width: 200px" name="birthday" id="birthday"
+										class="form-control" value="03/18/2015" />
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							$('#birthday').daterangepicker({
+								singleDatePicker: true
+							},
+							function(start, end, label) {
+								console.log(start.toISOString(), end.toISOString(), label);
+							});
+						});
+					</script>
+				</div>
+
+ Hello {{'World'}}!
+	<hr>
+  Your name: <input type="text" ng-model="yourname" placeholder="World">Hello {{yourname || 'World'}}!
+    <hr>
+            
+<ul ng-controller="PhoneListCtrl as s" >
+    <li ng-repeat="phone in phones|reverse">
+      {{phone.name|json}}
+    </li>
+    cid:{{s.ccid}}
+    <span ng-bind="{{s.ccid}}"></span>
+  </ul>
+
+  <hr>
+  
+  <div ng-controller="calacute as c">
+  <input type="number" min="0" ng-model="c.first" required >
+  <input type="number" min="0" ng-model="c.second" required >
+  
+  <select ng-model="c.inCurr">
+  <option ng-repeat="m in c.currencies">{{m}}</option>
+  </select>
+  <input type="text" value="{{c.total()}}"/>
+  <input type="button" ng-click="c.play()" value="play"/>
+  <input type="text" ng-change="c.play()" ng-model="name"/>
+  <input type="text" ng-blur="c.play()" ng-model="name"/>
+  </div>
+   <hr>
+  <div ng-controller="changeText">
+  <input type="text" ng-model="name1"/>
+  <input type="button" ng-click="clickN(name1)" value="click"/>
+  <span>{{name}}</span>
+  
+  
+  </div>
+   <hr>
+   <div contentEditable="true">ss</div>
+    <hr>
+   <div class="ng-hide">
+	hidden area
+   </div>
+<hr>
+<div>
+<input ng-keydown="count = count + 1" ng-init="count=0">
+key down count: {{count}}
+</div>
+<hr>
+<div>
+<input ng-click="varday='hello click'" value="click" ng-init="varday='hello'"
+type="button"/>
+{{varday}}
+</div>
+<hr>
+<div>
+<input ng-click="$updateClass('old-class','new-class');" value="click" ng-init="varday='hello'" class="old-class"
+type="button"/>
+{{varday}}
+</div>
+<hr>
+
+<div custom>
+2
+
+</div>
+<div custom > 
+3
+
+
+</div>
+-->
+</body>
+</html>
