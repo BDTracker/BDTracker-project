@@ -1,14 +1,14 @@
-.login-body{
+.search-body{
 	height:100%;
 	width:100%;
 }
 
-.login-buttongroup{
+.search-buttongroup{
 	height:4.5rem;
 }
-.login-buttongroup button{
+.search-buttongroup button{
 	height:100%;
-	width:50%;
+	width:33.3%;
 	color:#FFFFFF;
 	float:left;
 }
