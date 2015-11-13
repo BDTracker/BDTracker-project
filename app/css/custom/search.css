@@ -12,3 +12,5 @@
 	color:#FFFFFF;
 	float:left;
 }
+.search-body .title-bar{color:white;background-color:#cb2927;line-height:4rem; text-align:center;}
+.search-body .form-control{height:4rem; font-size:1.4rem;}

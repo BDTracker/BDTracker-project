@@ -1,16 +1,19 @@
-<div class="page-container">
-<h4 align="center" style="color:white;background-color:#cb2927;line-height:4rem">BD Tracker Search</h4>
-<form action="" method="post">
-<input type="text1" style="margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;width:94%;height:4rem" 
-name="Client" id="Client" class="form-control" placeholder="Client">
-<input type="text2" style="margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;width:94%;height:4rem" 
-name="Property" id="Property" class="form-control" placeholder="Property">
-<input type="text3" style="margin-bottom:1rem;display:block;margin-left:auto;margin-right:auto;width:94%;height:4rem" 
-name="City Filter" id="City Filter" class="form-control" placeholder="City Filter">
- <div class="navbar-fixed-bottom search-buttongroup">
+<div class="search-body">
+<h4 class="title-bar">BD Tracker Search</h4>
+<form action="" method="get" class="form-horizontal col-xs-10 col-xs-offset-1" ng-controller="searchfromController">
+	<div class="form-group input-group-lg">
+    	<input type="text" class="form-control" placeholder="Client" ng-model="searchBody.client">
+    </div>
+    <div class="form-group input-group-lg">
+    	<input type="text" class="form-control" placeholder="Property" ng-model="searchBody.property">
+    </div>
+    <div class="form-group input-group-lg">
+    	<input type="text" class="form-control" placeholder="City Filter" ng-model="searchBody.city">
+    </div>
+	<div class="navbar-fixed-bottom search-buttongroup">
         <button class="black02 f20" ng-click="go('/login','slideRight')">Back</button>
-        <button class="grey02 f20">Clear</button>
-        <button class="red02 f20">Search</button>
-        </div>
+        <button class="grey02 f20" ng-click="clear()">Clear</button>
+        <button class="red02 f20" ng-click="beginSearch('/path','slideRight')">Search</button>
+    </div>
 </form>
 </div>

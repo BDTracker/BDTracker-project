@@ -7,7 +7,8 @@ var app = angular.module('app', [
 	'httpService',
  	'loginController',
 	'directives',
-    'ngAnimate'
+    'ngAnimate',
+	'searchController'
 ]);
 
 app.config(['$routeProvider',

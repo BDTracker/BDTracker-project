@@ -16,12 +16,13 @@
 border:1px solid #333333;
 background:#FFFFFF;
 border-right-style:none;
+height:4rem;
 }
 .login-body .form-control{
 border:1px solid #333333;
 border-left-style:none;
-
-
+height:4rem; 
+font-size:1.4rem;
 }
 
 .login-body input {  
