@@ -1,0 +1,26 @@
+.selection-body{
+	height:100%;
+	width:100%;
+}
+
+.selection-buttongroup{
+	height:4.5rem;
+}
+.selection-buttongroup button{
+	height:100%;
+	width:50%;
+	color:#FFFFFF;
+	float:left;
+}
+
+.selection-buttongroup button1{
+	height:100%;
+	width:5%;
+	color:#FFFFFF;
+	float:left;
+}
+.selection-body .title-bar{color:white;background-color:#cb2927;line-height:4rem; text-align:center;}
+.selection-body .form-control{height:4rem; font-size:1.4rem;}
+.selection-body .abs{margin-top:15.5rem;width:auto;height:25rem; background-color:#FFF;}
+.selection-body .abc{position:absolute;width:80px;height:40px;display:inline;line-height:40px;padding:0 10px;
+        background:#cb2927;left:10px;top:50%;margin-top:-20px;}

@@ -20,6 +20,9 @@ app.config(['$routeProvider',
       when('/search', {
         templateUrl: 'tpls/search.html'
       }).
+	  when('/selection', {
+        templateUrl: 'tpls/selection.html'
+      }).
       otherwise({
         redirectTo: '/login'
       });

@@ -1,0 +1,39 @@
+<div class="selection-body">
+<div style="height:10rem">
+</div>
+<form action="" method="get" class="form-horizontal col-xs-10 col-xs-offset-1" ng-controller="searchfromController">
+	<div class="form-group input-group-lg" style="position:relative">
+    	<input type="text" class="form-control" placeholder="Client" ng-model="searchBody.client">
+        <a class="abc"> 
+        	<span style="float:left;color:#FFF;">HSBC</span>
+        </a>
+        <a class="abc"> 
+        	<span style="float:left;color:#FFF;">HSBC</span>
+        </a>
+    </div>
+    <div class="form-group input-group-lg" style="position:relative">
+    	<input type="text" class="form-control" placeholder="Property" ng-model="searchBody.property">
+        <a class="abc"> 
+        	<span style="float:left;color:#FFF;">HSBC</span>
+        </a>
+    </div>
+    <div class="form-group input-group-lg">
+    	<input type="text" class="form-control" placeholder="Tab an item below for contact history" ng-model="searchBody.city">
+    </div>
+    <p style="color:#999">NO search result.Please check spelling and try again (tab<br> New Search)
+    <br>
+    <br>
+    Hint:it is possible that<br>
+    1.The client or property has different names<br>
+    2.There is no contact so far-tab < Add New > to enter a<br>new contact post
+    </p>
+	<div class="navbar-fixed-bottom selection-buttongroup">
+        <button class="black02 f20" ng-click="go('/login','slideRight')">New Search</button>
+        <button class="red02 f20" ng-click="beginSearch('/path','slideRight')">Add New</button>
+    </div>
+</form>
+<div class="abs">
+</div>
+
+</div>
+
