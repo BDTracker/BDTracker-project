@@ -13,13 +13,13 @@
 	float:left;
 }
 .login-body .input-group-addon{
-border:1px solid #333333;
+/*border:1px solid #333333;*/
 background:#FFFFFF;
 border-right-style:none;
 height:4rem;
 }
 .login-body .form-control{
-border:1px solid #333333;
+/*border:1px solid #333333;*/
 border-left-style:none;
 height:4rem; 
 font-size:1.4rem;
@@ -29,7 +29,8 @@ font-size:1.4rem;
     outline: none;   
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);  
 }  
-.login-body input:focus {
-outline: none;   
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);  
+
+.login-body .image {
+	height:2.2rem;
+	width: 2.2rem;
 }

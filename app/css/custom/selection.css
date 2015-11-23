@@ -13,14 +13,22 @@
 	float:left;
 }
 
-.selection-buttongroup button1{
-	height:100%;
-	width:5%;
-	color:#FFFFFF;
-	float:left;
-}
 .selection-body .title-bar{color:white;background-color:#cb2927;line-height:4rem; text-align:center;}
-.selection-body .form-control{height:4rem; font-size:1.4rem;}
-.selection-body .abs{margin-top:15.5rem;width:auto;height:25rem; background-color:#FFF;}
-.selection-body .abc{position:absolute;width:80px;height:40px;display:inline;line-height:40px;padding:0 10px;
-        background:#cb2927;left:10px;top:50%;margin-top:-20px;}
+.selection-body .form-control{height:4rem; font-size:1.4rem; padding-top:0; padding-left:0.5rem}
+
+		
+.selection-body .form-horizontal .form-group .form-control .btn{
+	background:#ffffff;
+	height:3rem;
+	color:#cb2927;
+	margin-top:0.4rem;
+	border:#cb2927 solid 1px;
+	
+}
+.selection-body .form-horizontal .form-group .form-control .btn-select{
+	background:#cb2927;
+	height:3rem;
+	color:#FFFFFF;
+	margin-top:0.4rem;
+	
+}

@@ -33,9 +33,11 @@ background:#f1f0fe;
 .blue06{ color:#50d8f1}
 .purple06{ color:#cf76fd}
 .green06{ color:#89da5c}
-
+.black09{color:#999}
 
 .black02{ background-color:#231d29}
+
+
 .grey02{background-color:#656565}
 .red02{ background-color:#cb2927}
 
@@ -51,6 +53,7 @@ background:#f1f0fe;
     height: 100%;
 
     color: #fff;
+    background-color:#FFFFFF;
     /*backface-visibility*/
 
     -webkit-backface-visibility: hidden;

@@ -1,32 +1,31 @@
 <div class="login-body green12" ng-controller="loginformController">
-<div style="height:20rem">
+<div style="height:20rem;">
+    <img style="height:10rem;width: 40%;margin-top: 5rem;margin-left: 30%" src="img/login/login_logo.png" alt="">
 </div>
-	<form class="form-horizontal col-xs-10 col-xs-offset-1">
+    <form class="form-horizontal col-xs-10 col-xs-offset-1">
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon"> 
-                
+                    <img class="image" src="img/login/icon_password.png" alt="">
                 </span>
                 <input type="text" ng-model= "user.username" class="form-control " placeholder="Username" />
             </div>
         </div>
 
         <div class="form-group">
-        	<div class="input-group input-group-lg">
+            <div class="input-group input-group-lg">
                 <span class="input-group-addon"> 
-              
+                    <img class="image" src="img/login/icon_user.png" alt="">
                 </span>
                 <input type="password" ng-model= "user.password" class="form-control" placeholder="Password"/>
             </div>
         </div>
-        
-       
-        
         <div class="navbar-fixed-bottom login-buttongroup">
         <button class="black02 f20" ng-click="exit()">Exit</button>
         <button class="red02 f20" ng-click="login('/search','slideLeft')">Log In</button>
         </div>
     </form>
+    <img style="width: 100%" src="img/login/bg_map.png" alt="">
 <alert-directive></alert-directive>
 
 </div>

@@ -5,12 +5,12 @@ var httpService = angular.module("httpService",[]);
 
 // httpService config
 httpService.run(function($http) {
-  $http.defaults.headers.common.Authorization = 'Basic YmVlcDpib29w'
+ // $http.defaults.headers.common.Authorization = 'Basic a2lkMT=='
 });
 
 //do get 
 httpService.factory("doGetRequest",["$http",function($http){
-					 $http.defaults.withCredentials = true;								 
+										 
 					var doGetRequest = function(url,data,header){
 						if(url == null||url == "undefined"){
 							console.log("url can't be null ");

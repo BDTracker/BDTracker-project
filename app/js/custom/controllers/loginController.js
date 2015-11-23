@@ -24,14 +24,15 @@ loginController.controller("loginformController",["$scope","doGetRequest","$root
 								'Content-Type':"application/json"
 								};
 										 console.log( $scope.user);
-										 $rootScope.go(path,animation);
-										//doGetRequest.doGetRequest(loginApi,null,header)
-										//.success(function(data, status, headers, config){
-										//	console.log(data);
-										//})
-										//.error(function(data, status, headers, config){
-										//	console.log("request failed");
-										//	});
+										 
+										doGetRequest.doGetRequest(loginApi,null,header)
+										.success(function(data, status, headers, config){
+											console.log(data);
+											//$rootScope.go(path,animation);
+										})
+										.error(function(data, status, headers, config){
+											console.log("request failed");
+											});
 									 };
 									 }]);
 
